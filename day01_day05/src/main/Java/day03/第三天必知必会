@@ -1,0 +1,58 @@
+1.“&”和“&&”的异同
+        //相同点1：& 与  && 的运算结果相同
+        //相同点2：当符号左边是true时，二者都会执行符号右边的运算
+        //不同点：当符号左边是false时，&继续执行符号右边的运算。&&不再执行符号右边的运算。
+        //开发中，推荐使用&&
+2.程序输出
+class OperatorTest {
+	public static void main(String[] args) {
+		boolean x = true;
+		boolean y = false;
+		short z = 40;
+		if ((z++ == 40) && (y = true)) {
+			z++;
+		}
+		if ((x = false) || (++z == 43)) {
+			z++;
+		}
+		System.out.println("z = " + z);
+	}
+}
+结果为：44
+3.定义三个int型变量并赋值，使用三元运算符或者if-else获取这三个数中的较大数的实现
+public class T_07Max3 {
+    public static void main(String[] args) {
+        int a=8,b=9,c=6;
+        if((a>b)&&(a>c)){
+            System.out.println("最大值为："+a);
+        }else if((b>c)&&(b>a)){
+            System.out.println("最大值为："+b);
+        }else {
+            System.out.println("最大值为："+c);
+        }
+    }
+}
+4.编写程序，声明2个double型变量并赋值。判断第一个数大于10.0，且第2个数小于20.0，打印两数之和。否则，打印两数的乘积。
+public class T_08Test {
+    public static void main(String[] args) {
+        double d1=13.00;
+        double d2=24.22;
+        if((d1>10.00)&&(d2)<20.00){
+            System.out.println(d1+d2);
+        }else {
+            System.out.println(d1*d2);
+        }
+    }
+}
+5. 交换两个变量值的代码的实现
+public class T_09SwapTwoNums {
+    public static void main(String[] args) {
+        int a=10;
+        int b=20;
+        int temp=a;
+        a=b;
+        b=temp;
+        System.out.println(a);
+        System.out.println(b);
+    }
+}
